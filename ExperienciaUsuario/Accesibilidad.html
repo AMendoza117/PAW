@@ -1,94 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro de Información</title>
-</head>
-<body style="margin: 0; font-family: Helvetica, sans-serif; background-color: #F5F5F5;">
+    <style>
+      /* Contenedor de los botones para alinearlos y centrarlos */
+      .alert {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px; /* Opcional: añade un margen superior */
+      }
+
+      /* Estilo para los botones de notificaciones */
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        margin: 0 10px; /* Espacio entre los botones */
+      }
+
+      /* Botón de Activar */
+      .btn-info {
+        background-color: #17a2b8; /* Azul claro */
+        color: white;
+      }
+
+      .btn-info:hover {
+        background-color: #138496; /* Azul oscuro */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Botón de Desactivar */
+      .btn-warning {
+        background-color: #ffc107; /* Amarillo */
+        color: black;
+      }
+
+      .btn-warning:hover {
+        background-color: #e0a800; /* Amarillo oscuro */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      font-family: Helvetica, sans-serif;
+      background-color: #f5f5f5;
+    "
+  >
     <!-- Cabecera -->
     <div>
-        <nav style="background-color: #003366; height: 80px; width: 100%; padding: 0 20px; box-sizing: border-box;">
-            <img src="./assets/logoutng.webp" alt="Logo UTNG" class="logo" style="line-height: 80px; padding: 0 100px; margin: 20px; display: inline-block;">
-            <ul style="float: right; margin-right: 20px; list-style: none; padding: 0;">
-                <li style="display: inline-block; line-height: 80px; margin: 0 5px;">
-                    <a href="index.html" style="color: white; font-size: 17px; padding: 7px 13px; border-radius: 3px; text-transform: uppercase; text-decoration: none;">Inicio</a>
-                </li>
-                <li style="display: inline-block; line-height: 80px; margin: 0 5px;">
-                    <a href="Carreras.html" style="color: white; font-size: 17px; padding: 7px 13px; border-radius: 3px; text-transform: uppercase; text-decoration: none;">Carreras</a>
-                </li>
-                <li style="display: inline-block; line-height: 80px; margin: 0 5px;">
-                    <a href="Nosotros.html" style="color: white; font-size: 17px; padding: 7px 13px; border-radius: 3px; text-transform: uppercase; text-decoration: none;">Nosotros</a>
-                </li>
-                <li style="display: inline-block; line-height: 80px; margin: 0 5px;">
-                    <a href="Dudas.html" style="color: white; font-size: 17px; padding: 7px 13px; border-radius: 3px; text-transform: uppercase; text-decoration: none;">Dudas</a>
-                </li>
-                <li style="display: inline-block; line-height: 80px; margin: 0 5px;">
-                    <a href="Exitos.html" style="color: white; font-size: 17px; padding: 7px 13px; border-radius: 3px; text-transform: uppercase; text-decoration: none;">Éxitos</a>
-                </li>
-                <li style="display: inline-block; line-height: 80px; margin: 0 5px;">
-                    <a href="Accesibilidad.html"  style="color: white; font-size: 17px; padding: 7px 13px; border-radius: 3px; text-transform: uppercase; text-decoration: none; background: #66ff66; transition: .5s;">Accesibilidad</a>
-                </li>
-            </ul>
-        </nav>
+      <nav
+        style="
+          background-color: #003366;
+          height: 80px;
+          width: 100%;
+          padding: 0 20px;
+          box-sizing: border-box;
+        "
+      >
+        <img
+          src="./assets/logoutng.webp"
+          alt="Logo UTNG"
+          class="logo"
+          style="
+            line-height: 80px;
+            padding: 0 100px;
+            margin: 20px;
+            display: inline-block;
+          "
+        />
+        <ul
+          style="float: right; margin-right: 20px; list-style: none; padding: 0"
+        >
+          <li style="display: inline-block; line-height: 80px; margin: 0 5px">
+            <a
+              href="index.html"
+              style="
+                color: white;
+                font-size: 17px;
+                padding: 7px 13px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                text-decoration: none;
+              "
+              >Inicio</a
+            >
+          </li>
+          <li style="display: inline-block; line-height: 80px; margin: 0 5px">
+            <a
+              href="Carreras.html"
+              style="
+                color: white;
+                font-size: 17px;
+                padding: 7px 13px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                text-decoration: none;
+              "
+              >Carreras</a
+            >
+          </li>
+          <li style="display: inline-block; line-height: 80px; margin: 0 5px">
+            <a
+              href="Nosotros.html"
+              style="
+                color: white;
+                font-size: 17px;
+                padding: 7px 13px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                text-decoration: none;
+              "
+              >Nosotros</a
+            >
+          </li>
+          <li style="display: inline-block; line-height: 80px; margin: 0 5px">
+            <a
+              href="Dudas.html"
+              style="
+                color: white;
+                font-size: 17px;
+                padding: 7px 13px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                text-decoration: none;
+              "
+              >Dudas</a
+            >
+          </li>
+          <li style="display: inline-block; line-height: 80px; margin: 0 5px">
+            <a
+              href="Exitos.html"
+              style="
+                color: white;
+                font-size: 17px;
+                padding: 7px 13px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                text-decoration: none;
+              "
+              >Éxitos</a
+            >
+          </li>
+          <li style="display: inline-block; line-height: 80px; margin: 0 5px">
+            <a
+              href="Accesibilidad.html"
+              style="
+                color: white;
+                font-size: 17px;
+                padding: 7px 13px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                text-decoration: none;
+                background: #66ff66;
+                transition: 0.5s;
+              "
+              >Más información</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-        <!-- Formulario -->
-        <div class="main-content" style="max-width: 800px; margin: 20px auto; padding: 20px; background-color: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 5px;">
-            <h2 style="color: #333;">¿Quieres información personalizada?</h2>
-            <p style="margin-bottom: 20px;">Ingresa tus datos y te contactaremos lo más pronto posible.</p>
+      <!-- Formulario -->
+      <div
+        class="main-content"
+        style="
+          max-width: 800px;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #ffffff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          border-radius: 5px;
+        "
+      >
+        <h2 style="color: #333">¿Quieres información personalizada?</h2>
+        <p style="margin-bottom: 20px">
+          Ingresa tus datos y te contactaremos lo más pronto posible.
+        </p>
 
-            <form id="infoForm" style="display: flex; flex-direction: column; gap: 15px;">
-                <label for="nombre" style="font-weight: bold;">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+        <form
+          id="infoForm"
+          style="display: flex; flex-direction: column; gap: 15px"
+        >
+          <label for="nombre" style="font-weight: bold">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Ingresa tu nombre"
+            required
+            style="
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              font-size: 16px;
+            "
+          />
 
-                <label for="apellidos" style="font-weight: bold;">Apellidos:</label>
-                <input type="text" id="apellidos" name="apellidos" placeholder="Ingresa tus apellidos" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+          <label for="apellidos" style="font-weight: bold">Apellidos:</label>
+          <input
+            type="text"
+            id="apellidos"
+            name="apellidos"
+            placeholder="Ingresa tus apellidos"
+            required
+            style="
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              font-size: 16px;
+            "
+          />
 
-                <label for="edad" style="font-weight: bold;">Edad:</label>
-                <input type="number" id="edad" name="edad" placeholder="Ingresa tu edad" min="1" max="120" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+          <label for="edad" style="font-weight: bold">Edad:</label>
+          <input
+            type="number"
+            id="edad"
+            name="edad"
+            placeholder="Ingresa tu edad"
+            min="1"
+            max="120"
+            required
+            style="
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              font-size: 16px;
+            "
+          />
 
-                <label for="correo" style="font-weight: bold;">Correo Electrónico:</label>
-                <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo electrónico" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+          <label for="correo" style="font-weight: bold"
+            >Correo Electrónico:</label
+          >
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="Ingresa tu correo electrónico"
+            required
+            style="
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              font-size: 16px;
+            "
+          />
 
-                <button type="submit" style="padding: 10px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">Registrar</button>
-            </form>
-        </div>
-        <div class="alert alert-info mt-3" role="alert">
-            <button class="btn btn-info" type="button" id="btnActivar" onclick="activarSuscripcion()">
-                Activar Notificaciones Push
-            </button>
-        </div>
-        <div class="alert alert-info mt-3" role="alert">
-            <button class="btn btn-warning" type="button" id="btnDesactivar" onclick="desactivarSuscripcion()">
-                Desactivar Notificaciones Push
-            </button>
-        </div>    
+          <button
+            type="submit"
+            style="
+              padding: 10px 15px;
+              background-color: #4caf50;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              font-size: 16px;
+            "
+          >
+            Registrar
+          </button>
+        </form>
+      </div>
+      <div class="alert alert-info mt-3" role="alert">
+        <button
+          class="btn btn-info"
+          type="button"
+          id="btnActivar"
+          onclick="activarSuscripcion()"
+        >
+          Activar Notificaciones Push
+        </button>
+        <button
+          class="btn btn-warning"
+          type="button"
+          id="btnDesactivar"
+          onclick="desactivarSuscripcion()"
+        >
+          Desactivar Notificaciones Push
+        </button>
+      </div>
 
-        <!-- Tabla de datos -->
-        <div class="table-container" style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); overflow-x: auto; margin-top: 20px;">
-            <h2 style="color: #333; margin-bottom: 15px;">Datos Registrados</h2>
-            <table id="dataTable" style="width: 100%; border-collapse: collapse;">
-                <thead>
-                    <tr>
-                        <th style="background-color: #007bff; color: #ffffff; text-align: left; padding: 10px;">Nombre</th>
-                        <th style="background-color: #007bff; color: #ffffff; text-align: left; padding: 10px;">Apellidos</th>
-                        <th style="background-color: #007bff; color: #ffffff; text-align: left; padding: 10px;">Edad</th>
-                        <th style="background-color: #007bff; color: #ffffff; text-align: left; padding: 10px;">Correo Electrónico</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Los datos registrados se añadirán aquí dinámicamente -->
-                    <tr>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">Juan</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">Pérez</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">25</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">juan@example.com</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      <!-- Tabla de datos -->
+      <div
+        class="table-container"
+        style="
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          overflow-x: auto;
+          margin-top: 20px;
+        "
+      >
+        <h2 style="color: #333; margin-bottom: 15px">Datos Registrados</h2>
+        <table id="dataTable" style="width: 100%; border-collapse: collapse">
+          <thead>
+            <tr>
+              <th
+                style="
+                  background-color: #007bff;
+                  color: #ffffff;
+                  text-align: left;
+                  padding: 10px;
+                "
+              >
+                Nombre
+              </th>
+              <th
+                style="
+                  background-color: #007bff;
+                  color: #ffffff;
+                  text-align: left;
+                  padding: 10px;
+                "
+              >
+                Apellidos
+              </th>
+              <th
+                style="
+                  background-color: #007bff;
+                  color: #ffffff;
+                  text-align: left;
+                  padding: 10px;
+                "
+              >
+                Edad
+              </th>
+              <th
+                style="
+                  background-color: #007bff;
+                  color: #ffffff;
+                  text-align: left;
+                  padding: 10px;
+                "
+              >
+                Correo Electrónico
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Los datos registrados se añadirán aquí dinámicamente -->
+            <tr>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd">Juan</td>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd">
+                Pérez
+              </td>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd">25</td>
+              <td style="padding: 10px; border-bottom: 1px solid #ddd">
+                juan@example.com
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <script src="JS/indexDb.js"></script>
     <script src="JS/app.js"></script>
-</body>
+  </body>
 </html>
