@@ -1,0 +1,61 @@
+div {
+    text-align: center; /* Alinea las tablas al centro */
+}
+
+table {
+    width: 250px; /* Ancho fijo para cada tabla */
+    margin: 20px;
+    display: inline-block;
+    vertical-align: top;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+td button.ver-button1 {
+    display: block;
+    margin: 0 auto;
+    background-color: #cacabe; 
+    padding: 8px 12px; 
+    color: #000000; 
+}
+
+td button.ver-button2 {
+    display: block;
+    margin: 0 auto;
+    background-color: #cacabe; 
+    padding: 8px 12px; 
+    color: #000000; 
+}
+
+td button.ver-button3 {
+    display: block;
+    margin: 0 auto;
+    background-color: #cacabe; 
+    padding: 8px 12px; 
+    color: #000000; 
+}
+
+td button.ver-button4 {
+    display: block;
+    margin: 0 auto;
+    background-color: #cacabe; 
+    padding: 8px 12px; 
+    color: #000000; 
+}
+
+.texto-aumentado {
+    font-size: 16px; 
+    transition: font-size 0.5s; 
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrera de Técnico Superior Universitario en Administración, área Turismo - UTNG</title>
+    <link rel="stylesheet" href="./css/ola.css">
+    <style>
+        /* Agrega estilos adicionales según sea necesario */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            flex: 0 1 calc(33.33% - 20px);
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .dropdown, .radio-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="radio"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body onload="cargarPagina()">
+    <div>
+        <nav>
+            <img src="./assets/logoutng.webp" alt="Logo UTNG" class="logo" style="margin: 20px;">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a class="active" href="Carreras.html">Carreras</a></li>
+                
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Dudas.html">Dudas</a></li>
+                <li><a href="Exitos.html">Éxitos</a></li>
+                <li><a href="Accesibilidad.html">Accesibilidad</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="container">
+                <h1>Carrera de Técnico Superior Universitario en Administración, área Turismo</h1>
+                <div class="card-container">
+                    <!-- Perfil de Ingreso -->
+                    <div class="card">
+                        <h2>Perfil de Ingreso</h2>
+                        <p>El aspirante deberá ser egresado en educación media superior, preferentemente de las áreas de Económico Administrativo, Humanidades o áreas afines; así como mostrar interés por los idiomas y disposición para relacionarse con personas de diversas culturas y nacionalidades.</p>
+                    </div>
+
+                    <!-- Competencias Específicas Adquiridas -->
+                    <div class="card">
+                        <h2>Competencias Específicas Adquiridas</h2>
+                        <ul>
+                            <li>Promocionar y desarrollar destinos turísticos con base en las necesidades actuales del sector.</li>
+                            <li>Participar activamente en la operación de hoteles, agencia de viajes, organización de eventos, elaboración de planes y proyectos turísticos.</li>
+                            <li>Dirigir empresas turísticas públicas y privadas.</li>
+                            <li>Colaborar con los prestadores de productos y servicios en eventos de promoción turística.</li>
+                            <li>Planear y conservar el medio ambiente, así como el patrimonio cultural y natural, para ejercer y promocionar el turismo sustentable.</li>
+                            <li>Dominio de idiomas, inglés y francés.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Ocupaciones Profesionales -->
+                    <div class="card">
+                        <h2>Ocupaciones Profesionales</h2>
+                        <ul>
+                            <li>Coordinador de empresas del sector turístico, público o privado.</li>
+                            <li>Coordinador de hoteles, restaurantes, banquetes, organizadoras de eventos y spa.</li>
+                            <li>Asesor en agencias u operadoras de viajes.</li>
+                            <li>Supervisor de lugares naturales, culturales, regionales, zonas arqueológicas y museos.</li>
+                            <li>Coordinador de centros de convenciones, oficinas de congresos y visitantes.</li>
+                            <li>Coordinar empresas organizadoras de eventos.</li>
+                            <li>Ejercer como empresario independiente.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mapa curricular -->
+                    <div class="card">
+                        <h2>Mapa curricular</h2>
+                        <!-- Inserta aquí el contenido del mapa curricular (tabla, imágenes, etc.) -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+En la sección "Mapa curricular," puedes insertar el contenido del mapa curricular, ya sea como una tabla HTML o mediante imágenes, según tus preferencias y necesidades específicas.
+
+User
+Añadele un espacio para una imagen grande en la parte de arriba que representara la carrera
+ChatGPT
+¡Claro! Puedes añadir una imagen representativa de la carrera en la parte superior de la página. Para ello, puedes agregar una nueva div antes de la sección principal y luego agregar una etiqueta img dentro de esa div. Aquí tienes la versión actualizada del código:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrera de Técnico Superior Universitario en Administración, área Turismo - UTNG</title>
+    <link rel="stylesheet" href="./css/ola.css">
+    <style>
+        /* Agrega estilos adicionales según sea necesario */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            flex: 0 1 calc(33.33% - 20px);
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .dropdown, .radio-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="radio"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav>
+            <img src="./assets/logoutng.webp" alt="Logo UTNG" class="logo" style="margin: 20px;">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a class="active" href="Carreras.html">Carreras</a></li>
+                
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Dudas.html">Dudas</a></li>
+                <li><a href="Exitos.html">Éxitos</a></li>
+                <li><a href="Accesibilidad.html">Accesibilidad</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="header-image" style="width: 100%; display: flex; align-items: center; justify-content: center;">
+                <img src="assets/turismo.jpg" alt="Imagen Representativa de la Carrera" style="width: 20%;">
+            </div>
+            <div class="container">
+                <h1>Carrera de Técnico Superior Universitario en Administración, área Turismo</h1>
+                <div class="card-container" style="display: flex; align-items: top; justify-content: center;">
+                    <!-- Perfil de Ingreso -->
+                    <div class="card">
+                        <h2>Perfil de Ingreso</h2>
+                        <p>El aspirante deberá ser egresado en educación media superior, preferentemente de las áreas de Económico Administrativo, Humanidades o áreas afines; así como mostrar interés por los idiomas y disposición para relacionarse con personas de diversas culturas y nacionalidades.</p>
+                    </div>
+
+                    <!-- Competencias Específicas Adquiridas -->
+                    <div class="card">
+                        <h2>Competencias Específicas Adquiridas</h2>
+                        <ul>
+                            <li>Promocionar y desarrollar destinos turísticos con base en las necesidades actuales del sector.</li>
+                            <li>Participar activamente en la operación de hoteles, agencia de viajes, organización de eventos, elaboración de planes y proyectos turísticos.</li>
+                            <li>Dirigir empresas turísticas públicas y privadas.</li>
+                            <li>Colaborar con los prestadores de productos y servicios en eventos de promoción turística.</li>
+                            <li>Planear y conservar el medio ambiente, así como el patrimonio cultural y natural, para ejercer y promocionar el turismo sustentable.</li>
+                            <li>Dominio de idiomas, inglés y francés.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Ocupaciones Profesionales -->
+                    <div class="card">
+                        <h2>Ocupaciones Profesionales</h2>
+                        <ul>
+                            <li>Coordinador de empresas del sector turístico, público o privado.</li>
+                            <li>Coordinador de hoteles, restaurantes, banquetes, organizadoras de eventos y spa.</li>
+                            <li>Asesor en agencias u operadoras de viajes.</li>
+                            <li>Supervisor de lugares naturales, culturales, regionales, zonas arqueológicas y museos.</li>
+                            <li>Coordinador de centros de convenciones, oficinas de congresos y visitantes.</li>
+                            <li>Coordinar empresas organizadoras de eventos.</li>
+                            <li>Ejercer como empresario independiente.</li>
+                        </ul>
+                    </div>
+
+                    
+                    <div class="card">
+                        <h2 style="color: #333; font-size: 24px; text-align: center;">Mapa curricular</h2>
+                        <a href="assets/TurismoPlanDeEstudios.pdf" download="Mapa Curricular" style="display: block; text-align: center; font-size: 18px; color: #fff; background-color: #007bff; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 10px;">Descargar Mapa Curricular</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

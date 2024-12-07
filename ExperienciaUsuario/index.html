@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#000000" />
+    <script src=""></script>
+    <link rel="stylesheet" href="./css/ola.css" />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+        max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+        margin: auto;
+      }
+
+      video {
+        width: 3000px; /* Ajusta el ancho del video según tus necesidades */
+        height: auto;
+      }
+
+      .campus-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 50%; /* El ancho de los botones ocupará la mitad derecha de la pantalla */
+      }
+
+      .campus-button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #4caf50;
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .campus-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img
+        src="./assets/logoutng.webp"
+        alt="Logo UTNG"
+        class="logo"
+        style="margin: 20px"
+      />
+      <ul>
+        <li><a class="active" href="index.html">Inicio</a></li>
+        <li><a href="Carreras.html">Carreras</a></li>
+        <li><a href="Nosotros.html">Nosotros</a></li>
+        <li><a href="Dudas.html">Dudas</a></li>
+        <li><a href="Exitos.html">Éxitos</a></li>
+        <li><a href="Accesibilidad.html">Accesibilidad</a></li>
+      </ul>
+    </nav>
+    <section>
+      <main>
+        <video controls>
+          <source src="tu_video_de_noticias.mp4" type="video/mp4" />
+          Tu navegador no soporta el tag de video.
+        </video>
+
+        <div class="campus-buttons">
+          <a href="enlace_campus_1" class="campus-button">Ver Campus 1</a>
+          <a href="enlace_campus_2" class="campus-button">Ver Campus 2</a>
+        </div>
+      </main>
+    </section>
+    <script src="JS/app.js"></script>
+  </body>
+</html>

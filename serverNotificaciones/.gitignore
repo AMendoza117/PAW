@@ -1,0 +1,66 @@
+# Node.js
+node_modules/
+npm-debug.log
+npm-debug.log.*
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Build directories
+dist/
+build/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE and Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln
+*.sw?
+*.vim
+*.swp
+*.log
+*.bak
+*.tmp
+*.code-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Package distribution
+*.tgz
+
+# Optional npm cache directory
+.npm
+
+# Yarn Integrity file
+.yarn-integrity
+
+# pnpm store
+.pnpm-store/
+
+# IDE config
+.vscode/
+.idea/
+*.code-workspace
+
+# Miscellaneous
+*.orig
+*.rej

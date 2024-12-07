@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Carreras</title>
+    <link rel="stylesheet" href="./css/ola.css">
+    <style>
+        /* Agrega estilos según sea necesario */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .filter-button {
+            padding: 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            flex-grow: 1;
+        }
+
+        .filter-buttons {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            margin-bottom: 50px;
+        }
+
+        .filter-button.ti {
+            background-color: #3498db; /* Azul */
+            color: #fff;
+        }
+
+        .filter-button.ea {
+            background-color: #e74c3c; /* Rojo */
+            color: #fff;
+        }
+
+        .filter-button.iee {
+            background-color: #2ecc71; /* Verde */
+            color: #fff;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            max-width: 1600px; /* Ajusta el ancho del modal según sea necesario */
+        }
+
+        .close {
+            cursor: pointer;
+            float: right;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .dropdown, .radio-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="radio"] {
+            margin-bottom: 10px;
+        }
+
+        .feedback {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .error {
+            color: #FF0000;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .card.ti {
+            background-color: #3498db; /* Azul */
+            color: #fff;
+        }
+
+        .card.ea {
+            background-color: #e74c3c; /* Rojo */
+            color: #fff;
+        }
+
+        .card.iee {
+            background-color: #2ecc71; /* Verde */
+            color: #fff;
+        }
+
+        * {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: helvetica;
+}
+
+nav {
+    background-color: #003366;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo {
+    line-height: 80px;
+    padding: 0 100px;
+    margin: 20px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a.active,
+a:hover {
+    background: #66ff66;
+    transition: .5s;
+}
+
+section {
+    background: #F5F5F5;
+    background-size: cover;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter-button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 0 1 calc(25% - 20px);
+    background-color: #add8e6;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown,
+.radio-group {
+    margin-bottom: 20px;
+}
+
+.dropdown label,
+.radio-group label {
+    margin-bottom: 5px;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+    </style>
+</head>
+<body onload="cargarPagina()">
+    <div>
+        <nav>
+            <img src="./assets/logoutng.webp" alt="Logo UTNG" class="logo" style="margin: 20px;">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a class="active" href="Carreras.html">Carreras</a></li>
+                
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Dudas.html">Dudas</a></li>
+                <li><a href="Exitos.html">Éxitos</a></li>
+                <li><a href="Accesibilidad.html">Accesibilidad</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Buscar...">
+                    <!-- <button class="filter-button" onclick="openModal()">Filtros</button> -->
+                </div>
+
+                <div class="filter-buttons">
+                    <div class="filter-button ti" onclick="filterByType('ti')">TI</div>
+                    <div class="filter-button ea" onclick="filterByType('ea')">EA</div>
+                    <div class="filter-button iee" onclick="filterByType('iee')">IEE</div>
+                    <div class="filter-button todos" onclick="filterByType('todos')">Mostrar Todos</div>
+                </div>
+        
+                <div class="card-container">
+                    <a class="card ti">
+                        <img src="assets/tics.jpg" alt="Imagen 1">
+                        <h2>Desarrollo de Software Multiplataforma</h2>
+                    </a>
+        
+                    <a class="card ti">
+                        <img src="assets/redes.jpg" alt="Imagen 2">
+                        <h2>Infraestructura de Redes Digitales</h2>
+                    </a>
+
+                    <a class="card ti">
+                        <img src="assets/entornos.jpg" alt="Imagen 2">
+                        <h2>Entornos Virtuales y Negocios Digitales</h2>
+                    </a>
+
+                    <a class="card ti">
+                        <img src="assets/diseno.jpg" alt="Imagen 2">
+                        <h2>Diseño Digital</h2>
+                    </a>
+
+                    <a class="card ea">
+                        <img src="assets/contaduria.jpg" alt="Imagen 2">
+                        <h2>Contaduría</h2>
+                    </a>
+
+                    <a class="card ea" href="Turismo.html">
+                        <img src="assets/turismo.jpg" alt="Imagen 2" >
+                        <h2>Turismo</h2>
+                    </a>
+
+                    <a class="card ea">
+                        <img src="assets/admin.jpg" alt="Imagen 2">
+                        <h2>Administración Área Capital Humano</h2>
+                    </a>
+        
+                    <!-- Puedes agregar más cartas según sea necesario -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="filterModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Filtros</h2>
+
+                <!-- Dropdown con 3 opciones -->
+                <div class="dropdown">
+                    <label for="selectDegree">Área:</label>
+                    <select id="selectDegree">
+                        <option value="todos">TI</option>
+                        <option value="pregrado">EA</option>
+                        <option value="posgrado">IEE</option>
+                    </select>
+                </div>
+    
+                <!-- Radio buttons en grupo -->
+                <div class="radio-group">
+                    <label>Nivel de Estudio:</label><br>
+                    <label for="ingenieria">Ingeniería</label>
+                    <input type="radio" id="ingenieria" name="nivelEstudio" value="ingenieria">
+    
+                    <label for="tsu">TSU</label>
+                    <input type="radio" id="tsu" name="nivelEstudio" value="tsu">
+    
+                    <label for="licenciatura">Licenciatura</label>
+                    <input type="radio" id="licenciatura" name="nivelEstudio" value="licenciatura">
+                </div>
+            </div>
+        </div>
+
+        <div class="feedback"></div>
+    <div class="error"></div>
+
+        <script>
+            function openModal() {
+            document.getElementById("filterModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("filterModal").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            var modal = document.getElementById("filterModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        // Función para realizar la búsqueda
+        function searchCarreras() {
+            var input, filter, cards, card, h2, i, txtValue;
+            input = document.querySelector('.search-input');
+            filter = input.value.toUpperCase();
+            cards = document.querySelectorAll('.card');
+
+            cards.forEach(function(card) {
+                h2 = card.querySelector('h2');
+                txtValue = h2.textContent || h2.innerText;
+
+                // Mostrar u ocultar la tarjeta según la búsqueda
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Escuchar el evento de entrada en el campo de búsqueda
+        document.querySelector('.search-input').addEventListener('input', searchCarreras);
+
+        function openModal() {
+            document.getElementById("filterModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("filterModal").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            var modal = document.getElementById("filterModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        function searchCarreras() {
+            var input, filter, cards, card, h2, i, txtValue;
+            input = document.querySelector('.search-input');
+            filter = input.value.toUpperCase();
+            cards = document.querySelectorAll('.card');
+            var feedback = document.querySelector('.feedback');
+            var error = document.querySelector('.error');
+
+            // Restablecer mensajes de retroalimentación
+            feedback.textContent = '';
+            error.textContent = '';
+
+            var cardsVisible = 0;
+
+            cards.forEach(function(card) {
+                h2 = card.querySelector('h2');
+                txtValue = h2.textContent || h2.innerText;
+
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    card.style.display = '';
+                    cardsVisible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Mostrar mensaje de retroalimentación
+            if (cardsVisible === 0) {
+                error.textContent = 'No se encontraron carreras que coincidan con la búsqueda.';
+            } else {
+                feedback.textContent = `Mostrando ${cardsVisible} carreras que coinciden con la búsqueda.`;
+            }
+        }
+
+        // Escuchar el evento de entrada en el campo de búsqueda
+        document.querySelector('.search-input').addEventListener('input', searchCarreras);
+
+        // Función para filtrar por tipo de carrera
+        function filterByType(type) {
+            var cards = document.querySelectorAll('.card');
+            var feedback = document.querySelector('.feedback');
+            var error = document.querySelector('.error');
+
+            // Restablecer mensajes de retroalimentación
+            feedback.textContent = '';
+            error.textContent = '';
+
+            // Mostrar todas las cartas
+            cards.forEach(function(card) {
+                card.style.display = '';
+            });
+
+            // Resaltar el botón presionado y restablecer los demás
+            document.querySelectorAll('.filter-button').forEach(function(button) {
+                if (button.classList.contains(type)) {
+                    button.style.opacity = '1';
+                } else {
+                    button.style.opacity = '0.5';
+                }
+            });
+
+            // Filtrar según el tipo de carrera
+            if (type !== 'todos') {
+                var filteredCards = document.querySelectorAll(`.card:not(.${type})`);
+                filteredCards.forEach(function(card) {
+                    card.style.display = 'none';
+                });
+            }
+
+            // Mostrar mensaje de retroalimentación
+            if (type === 'todos') {
+                feedback.textContent = 'Mostrando todas las carreras.';
+            } else {
+                feedback.textContent = `Mostrando carreras del tipo ${type.toUpperCase()}.`;
+            }
+        }
+
+        function cargarPagina() {
+            filterByType('todos');
+        }
+        </script>
+    </div>
+</body>
+</html>
