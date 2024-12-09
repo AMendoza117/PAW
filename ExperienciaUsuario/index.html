@@ -96,9 +96,115 @@
         <div class="campus-buttons">
           <a href="enlace_campus_1" class="campus-button">Ver Campus 1</a>
           <a href="enlace_campus_2" class="campus-button">Ver Campus 2</a>
+          <button
+      id="show-links-button"
+      style="
+        margin: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'"
+    >
+      Mostrar Enlaces
+    </button>
+
+    <ul
+      id="hidden-links"
+      style="
+        display: none;
+        margin-top: 20px;
+        list-style: none;
+        padding: 0;
+        text-align: center;
+      "
+    >
+      <li style="margin: 10px 0">
+        <a
+          class="active"
+          href="index.html"
+          style="text-decoration: none; color: #4caf50; font-size: 18px"
+          onmouseover="this.style.textDecoration='underline'"
+          onmouseout="this.style.textDecoration='none'"
+        >
+          Inicio
+        </a>
+      </li>
+      <li style="margin: 10px 0">
+        <a
+          href="Carreras.html"
+          style="text-decoration: none; color: #4caf50; font-size: 18px"
+          onmouseover="this.style.textDecoration='underline'"
+          onmouseout="this.style.textDecoration='none'"
+        >
+          Carreras
+        </a>
+      </li>
+      <li style="margin: 10px 0">
+        <a
+          href="Nosotros.html"
+          style="text-decoration: none; color: #4caf50; font-size: 18px"
+          onmouseover="this.style.textDecoration='underline'"
+          onmouseout="this.style.textDecoration='none'"
+        >
+          Nosotros
+        </a>
+      </li>
+      <li style="margin: 10px 0">
+        <a
+          href="Dudas.html"
+          style="text-decoration: none; color: #4caf50; font-size: 18px"
+          onmouseover="this.style.textDecoration='underline'"
+          onmouseout="this.style.textDecoration='none'"
+        >
+          Dudas
+        </a>
+      </li>
+      <li style="margin: 10px 0">
+        <a
+          href="Exitos.html"
+          style="text-decoration: none; color: #4caf50; font-size: 18px"
+          onmouseover="this.style.textDecoration='underline'"
+          onmouseout="this.style.textDecoration='none'"
+        >
+          Éxitos
+        </a>
+      </li>
+      <li style="margin: 10px 0">
+        <a
+          href="Accesibilidad.html"
+          style="text-decoration: none; color: #4caf50; font-size: 18px"
+          onmouseover="this.style.textDecoration='underline'"
+          onmouseout="this.style.textDecoration='none'"
+        >
+          Más información
+        </a>
+      </li>
+    </ul>
+
         </div>
       </main>
     </section>
+    <!-- Nuevo botón y lista oculta -->
+    
+    <script>
+      document
+        .getElementById("show-links-button")
+        .addEventListener("click", function () {
+          const links = document.getElementById("hidden-links");
+          links.style.display =
+            links.style.display === "none" || !links.style.display
+              ? "block"
+              : "none";
+        });
+    </script>
+
     <script src="JS/app.js"></script>
   </body>
 </html>

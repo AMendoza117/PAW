@@ -12,7 +12,7 @@ if ("serviceWorker" in navigator) {
 
 const enviarNotificaciones =()=>{
     const notificationOpts = {
-        body: "Este es el cuerpo de la notificacion",
+        body: "Notificacion Instrumento de evaluación",
         icon: "img/icono.png"
     }
 
@@ -42,7 +42,7 @@ const mostrarNotificaciones = () => {
     }
 }
 
-//mostrarNotificaciones();
+mostrarNotificaciones();
 
 const obtenerLlaves = () => {
     return fetch("http://localhost:3001/api/key")

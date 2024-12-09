@@ -2,10 +2,13 @@
     "name": "Registro de Información",
     "short_name": "RegistroInfo",
     "description": "Aplicación para registrar información de usuarios de forma sencilla y rápida.",
-    "start_url": "/",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#F5F5F5",
     "theme_color": "#003366",
+    "scope": "/",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
     "icons": [
         {
             "src": "/assets/icon-192x192.png",
@@ -17,8 +20,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "scope": "/",
-    "orientation": "portrait-primary",
-    "prefer_related_applications": false
+    ]
 }

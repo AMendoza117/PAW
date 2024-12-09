@@ -22,14 +22,16 @@ const urlsToCache = [
   "/assets/4.png",
   "/assets/diseno.jpg",
   "/assets/turismo.jpg",
-  "logoutng.webp"
+  "/assets/logoutng.webp" // Corrige la ruta
 ];
 
 // Instalación del Service Worker
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
+      return cache.addAll(urlsToCache).catch((error) => {
+        console.error("Error al agregar recursos a la caché:", error);
+      });
     })
   );
 });
@@ -59,10 +61,10 @@ self.addEventListener("fetch", (event) => {
 });
 
 // Notificaciones
-self.addEventListener("push", evento => {
-    console.log("SW evento push: ", evento.data.text());
-    const datos = JSON.parse(evento.data.text());
-    const titulo = datos.titulo;
-    const opciones = {};
-    evento.waitUntil(self.registration.showNotification(titulo, opciones));
-})
+self.addEventListener("push", (event) => {
+  console.log("SW evento push: ", event.data.text());
+  const datos = JSON.parse(event.data.text());
+  const titulo = datos.titulo;
+  const opciones = {};
+  event.waitUntil(self.registration.showNotification(titulo, opciones));
+});
